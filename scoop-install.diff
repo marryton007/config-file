@@ -1,0 +1,17 @@
+diff --git a/lib/install.ps1 b/lib/install.ps1
+index 5c78268b..55a74111 100644
+--- a/lib/install.ps1
++++ b/lib/install.ps1
+@@ -222,10 +222,11 @@ function dl_with_cache_aria2($app, $version, $manifest, $architecture, $dir, $co
+         "--no-conf=true"
+         "--follow-metalink=true"
+         "--metalink-preferred-protocol=https"
+-        "--min-tls-version=TLSv1.2"
++        # "--min-tls-version=TLSv1.2"
+         "--stop-with-process=$PID"
+         "--continue"
+         "--summary-interval 0"
++		"--check-certificate=false"
+     )
+ 
+     if($cookies) {

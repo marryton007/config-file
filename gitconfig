@@ -1,0 +1,44 @@
+[http "https://github.com"]
+	proxy = socks5://127.0.0.1:10080
+[http "https://gist.github.com"]
+        proxy = socks5://127.0.0.1:10080
+[http "https://git.alpinelinux.org"]
+        proxy = socks5://127.0.0.1:10080
+[http "https://pigweed.googlesource.com"]
+	proxy = socks5://127.0.0.1:10080
+[http "https://git.savannah.gnu.org"]
+	proxy = socks5://127.0.0.1:10080
+[http "https://git.kernel.org"]
+	proxy = socks5://127.0.0.1:10080
+[user]
+	email = marryton007@gmail.com
+	name = jiaxi.liu
+[core]
+	editor = 'vim'
+	quotepath = false
+	longpaths = true
+	autocrlf = input
+	safecrlf = true
+[i18n]
+	logoutputencoding = utf-8
+[i18n "commit"]
+	encoding = utf-8
+[gui]
+	encoding = utf-8
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	trustExitCode = false
+	path = D:\\scoop\\shims\\kdiff3.EXE
+	cmd = kdiff3.exe -qall $BASE $LOCAL $REMOTE -o $MERGED
+[difftool "kdiff3"]
+	trustExitCode = false
+	path = D:\\scoop\\shims\\kdiff3.EXE
+[diff]
+	tool = kdiff3
+[pull]
+	rebase = true
+[http]
+	postBuffer = 524288000
+[init]
+	defaultBranch = main
