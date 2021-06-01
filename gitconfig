@@ -17,25 +17,13 @@
 	editor = 'vim'
 	quotepath = false
 	longpaths = true
-	autocrlf = input
-	safecrlf = true
+	autocrlf = true
 [i18n]
 	logoutputencoding = utf-8
 [i18n "commit"]
 	encoding = utf-8
 [gui]
 	encoding = utf-8
-[merge]
-	tool = kdiff3
-[mergetool "kdiff3"]
-	trustExitCode = false
-	path = D:\\scoop\\shims\\kdiff3.EXE
-	cmd = kdiff3.exe -qall $BASE $LOCAL $REMOTE -o $MERGED
-[difftool "kdiff3"]
-	trustExitCode = false
-	path = D:\\scoop\\shims\\kdiff3.EXE
-[diff]
-	tool = kdiff3
 [pull]
 	rebase = true
 [http]
@@ -44,3 +32,21 @@
 	defaultBranch = main
 [hub]
 	protocol = ssh
+[mergetool]
+    prompt = false
+    keepBackup = false
+    keepTemporaries = false
+[merge]
+    tool = winmerge
+[mergetool "winmerge"]
+    name = WinMerge
+    trustExitCode = true
+    path = D:\\scoop\\shims\\winmergeU.exe
+    cmd = winmergeU.exe -u -e -dl \"Local\" -dr \"Remote\" $LOCAL $REMOTE $MERGED
+[diff]
+    tool = winmerge
+[difftool "winmerge"]
+    name = WinMerge
+    trustExitCode = true
+    path = D:\\scoop\\shims\\winmergeU.exe
+    cmd = winmergeU.exe -u -e $LOCAL $REMOTE
