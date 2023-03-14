@@ -1,0 +1,71 @@
+[http "https://github.com"]
+	proxy = socks5://127.0.0.1:10080
+[http "https://gist.github.com"]
+        proxy = socks5://127.0.0.1:10080
+[http "https://git.alpinelinux.org"]
+        proxy = socks5://127.0.0.1:10080
+[http "https://pigweed.googlesource.com"]
+	proxy = socks5://127.0.0.1:10080
+[http "https://git.savannah.gnu.org"]
+	proxy = socks5://127.0.0.1:10080
+[http "https://git.kernel.org"]
+	proxy = socks5://127.0.0.1:10080
+[http "https://android.googlesource.com"]
+	proxy = socks5://127.0.0.1:10080		
+[user]
+	email = niusan@ehomepoct.com
+	name = niusan
+[i18n]
+	logoutputencoding = utf-8
+[i18n "commit"]
+	encoding = utf-8
+[gui]
+	encoding = utf-8
+[pull]
+	rebase = true
+[http]
+	postBuffer = 524288000
+[init]
+	defaultBranch = main
+[hub]
+	protocol = ssh
+[alias]
+	co = checkout
+	ci = commit
+	br = branch
+	st = status
+	pl = pull
+	ps = push
+	res = restore
+	dt = difftool -d
+	mt = mergetool -y
+[merge]
+	tool = kdiff3 
+[mergetool]
+        prompt = false
+	keepBackup = false
+	trustExitCode = false
+[difftool]
+        prompt = false
+        keepBackup = false
+        trustExitCode = false	
+[core]
+	editor = 'hx'
+	quotepath = false
+	longpaths = true
+	autocrlf = true
+[credential "helperselector"]
+	selected = store
+[diff]
+	tool = kdiff3
+[credential]
+	helper = manager-core
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[credential "http://git.ehome.com"]
+	provider = generic
+[sequence]
+	editor = interactive-rebase-tool

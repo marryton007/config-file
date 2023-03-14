@@ -1,0 +1,83 @@
+[http "https://github.com"]
+        proxy = socks5://192.168.160.23:10082
+[http "https://gist.github.com"]
+        proxy = socks5://192.168.160.23:10082
+[http "https://git.alpinelinux.org"]
+        proxy = socks5://192.168.160.23:10082
+[http "https://pigweed.googlesource.com"]
+        proxy = socks5://192.168.160.23:10082
+[http "https://git.savannah.gnu.org"]
+        proxy = socks5://192.168.160.23:10082
+[http "https://git.kernel.org"]
+        proxy = socks5://192.168.160.23:10082
+[http "https://git.toradex.com"]
+        proxy = socks5://192.168.160.23:10082
+[http "https://git.buildroot.net"]
+        proxy = socks5://192.168.160.23:10082
+[http "https://boringssl.googlesource.com"]
+        proxy = socks5://192.168.160.23:10082
+[http "https://salsa.debian.org"]
+        proxy = socks5://192.168.160.23:10082
+[user]
+        email = niusan@ehomepoct.com
+        name = Niusan
+[core]
+        editor = 'nvim'
+        quotepath = false
+        longpaths = true
+        autocrlf = input
+        fsmonitor = true
+        attributesfile = ~/.gitattributes
+[i18n]
+        logoutputencoding = utf-8
+[i18n "commit"]
+        encoding = utf-8
+[gui]
+        encoding = utf-8
+[pull]
+        rebase = true
+[http]
+        postBuffer = 524288000
+[init]
+        defaultBranch = main
+[hub]
+        protocol = ssh
+[alias]
+        co = checkout
+        ci = commit
+        br = branch
+        st = status
+        pl = pull
+        ps = push
+        res = restore
+        dt = difftool
+        mt = mergetool
+        df = diff
+        diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
+[color]
+        ui = true
+[oh-my-zsh]
+        hide-status = 1
+[merge]
+        tool = kdiff3
+[diff]
+        tool = kdiff3
+[difftool]
+  prompt = false
+  keepBackup = false
+[mergetool]
+  prompt = false
+  keepTemporaries = false
+  keepBackup = false
+[icdiff]
+        options = --highlight --line-numbers
+[sequence]
+        editor = interactive-rebase-tool
+[diff "image"]
+        command = /home/jiaxi/git/git-diff-image/git_diff_image
+[scalar]
+        repo = /opt/sdk/rock/rk-android11/Source
+[maintenance]
+        repo = /opt/sdk/rock/rk-android11/Source
+[fetch]
+        showForcedUpdates = true          
