@@ -1,83 +1,89 @@
 [http "https://github.com"]
-        proxy = socks5://192.168.160.23:10082
+	proxy = socks5://192.168.160.23:10082
 [http "https://gist.github.com"]
-        proxy = socks5://192.168.160.23:10082
+    proxy = socks5://192.168.160.23:10082
 [http "https://git.alpinelinux.org"]
-        proxy = socks5://192.168.160.23:10082
+    proxy = socks5://192.168.160.23:10082
 [http "https://pigweed.googlesource.com"]
-        proxy = socks5://192.168.160.23:10082
+	proxy = socks5://192.168.160.23:10082
 [http "https://git.savannah.gnu.org"]
-        proxy = socks5://192.168.160.23:10082
+	proxy = socks5://192.168.160.23:10082
 [http "https://git.kernel.org"]
-        proxy = socks5://192.168.160.23:10082
+	proxy = socks5://192.168.160.23:10082
 [http "https://git.toradex.com"]
-        proxy = socks5://192.168.160.23:10082
+	proxy = socks5://192.168.160.23:10082
 [http "https://git.buildroot.net"]
-        proxy = socks5://192.168.160.23:10082
+	proxy = socks5://192.168.160.23:10082
 [http "https://boringssl.googlesource.com"]
-        proxy = socks5://192.168.160.23:10082
+	proxy = socks5://192.168.160.23:10082
 [http "https://salsa.debian.org"]
-        proxy = socks5://192.168.160.23:10082
+	proxy = socks5://192.168.160.23:10082
 [user]
-        email = niusan@ehomepoct.com
-        name = Niusan
+	email = niusan@ehomepoct.com
+	name = Niusan
 [core]
-        editor = 'nvim'
-        quotepath = false
-        longpaths = true
-        autocrlf = input
-        fsmonitor = true
-        attributesfile = ~/.gitattributes
+	editor = 'vim'
+	quotepath = false
+	longpaths = true
+	autocrlf = input
+	attributesfile = ~/.gitattributes
+	pager = less -FRSX
+	untrackedCache = true
 [i18n]
-        logoutputencoding = utf-8
+	logoutputencoding = utf-8
 [i18n "commit"]
-        encoding = utf-8
+	encoding = utf-8
 [gui]
-        encoding = utf-8
+	encoding = utf-8
 [pull]
-        rebase = true
+	rebase = true
 [http]
-        postBuffer = 524288000
+	postBuffer = 2000000000
+	sslVerify = false
 [init]
-        defaultBranch = main
+	defaultBranch = main
 [hub]
-        protocol = ssh
+	protocol = ssh
 [alias]
-        co = checkout
-        ci = commit
-        br = branch
-        st = status
-        pl = pull
-        ps = push
-        res = restore
-        dt = difftool
-        mt = mergetool
-        df = diff
-        diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
+	co = checkout
+	ci = commit
+	br = branch
+	st = status
+	pl = pull
+	ps = push
+	res = restore
+	dt = difftool
+	mt = mergetool
+	df = diff
+	diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
 [color]
-        ui = true
+	ui = true
 [oh-my-zsh]
-        hide-status = 1
+	hide-status = 1
 [merge]
-        tool = kdiff3
+	tool = kdiff3
 [diff]
-        tool = kdiff3
+	tool = kdiff3
 [difftool]
   prompt = false
   keepBackup = false
 [mergetool]
   prompt = false
-  keepTemporaries = false
+  keepTemporaries = false 
   keepBackup = false
 [icdiff]
-        options = --highlight --line-numbers
+	options = --highlight --line-numbers
 [sequence]
-        editor = interactive-rebase-tool
+	editor = interactive-rebase-tool
 [diff "image"]
-        command = /home/jiaxi/git/git-diff-image/git_diff_image
-[scalar]
-        repo = /opt/sdk/rock/rk-android11/Source
-[maintenance]
-        repo = /opt/sdk/rock/rk-android11/Source
+	command = /mnt/HDD/users/liujiaxi/git/git-diff-image/git_diff_image
 [fetch]
-        showForcedUpdates = true          
+	showForcedUpdates = true
+[scalar]
+	repo = /mnt/DATA/LiuJiaXi/rk-android11/Source
+	repo = /mnt/DATA/LiuJiaXi/rklinux-5.10
+[maintenance]
+	repo = /mnt/DATA/LiuJiaXi/rk-android11/Source
+	repo = /mnt/DATA/LiuJiaXi/rklinux-5.10
+[safe]
+	directory = /mnt/NVME/ZhongQiu/RK3568_ROCKCHIP_ANDROID11.0_SDK/

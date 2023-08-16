@@ -28,7 +28,7 @@ if f then
 				launch_menu,
 				{
 					label = "SSH " .. host,
-					args = {"ssh", host}
+					args = {"tssh", host}
 				}
 			)
 		end
@@ -99,11 +99,12 @@ return {
   default_prog = {"pwsh.EXE"},
   font_size = 12.0,
   initial_rows = 40,
-  initial_cols = 150,
+  initial_cols = 160,
   term = "xterm-256color",
   scrollback_lines = 35000,
   enable_scroll_bar = true,
-  add_wsl_distributions_to_launch_menu = false,
+  audible_bell = "Disabled",
+  -- add_wsl_distributions_to_launch_menu = false,
   -- window_background_image = "D:\\jiaxi\\.config\\wezterm\\wezbg.jpg",
   -- window_background_image_hsb = {
     -- -- Darken the background image by reducing it to 1/3rd
@@ -117,5 +118,5 @@ return {
     -- saturation = 1.0,
   -- },
   launch_menu = launch_menu,
-  window_close_confirmation = 'NeverPrompt'
+  window_close_confirmation = 'NeverPrompt',
 }

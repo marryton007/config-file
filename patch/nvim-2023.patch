@@ -1,0 +1,85 @@
+diff --git a/nvim/init.vim b/nvim/init.vim
+index 785fb42..5488be8 100644
+--- a/nvim/init.vim
++++ b/nvim/init.vim
+@@ -1,4 +1,9 @@
+ set autoread
++set mouse=
++set tabstop=4
++set shiftwidth=4
++set expandtab
++
+ au FocusGained,BufEnter * :checktime
+ " 当失去焦点或者离开当前的 buffer 的时候保存
+ set autowrite
+@@ -37,7 +42,7 @@ let g:floaterm_width = 0.7
+ let g:floaterm_height = 0.7
+ let g:floaterm_keymap_prev   = '<C-p>'
+ let g:floaterm_keymap_new    = '<C-n>'
+-let g:floaterm_keymap_toggle = '<C-t>'
++let g:floaterm_keymap_toggle = '<C-\>'
+ 
+ " 加载 lua 配置
+ lua require 'usr'
+diff --git a/nvim/lua/usr/colorscheme.lua b/nvim/lua/usr/colorscheme.lua
+index b276c27..8dfd197 100644
+--- a/nvim/lua/usr/colorscheme.lua
++++ b/nvim/lua/usr/colorscheme.lua
+@@ -1,7 +1,7 @@
+ require("catppuccin").setup({
+-  -- flavour = "macchiato",
++  flavour = "macchiato",
+   -- flavour = "latte",
+-  flavour = "frappe",
++  -- flavour = "frappe",
+   -- flavour = "mocha",
+   transparent_background = false,
+   integrations = {},
+diff --git a/nvim/lua/usr/init.lua b/nvim/lua/usr/init.lua
+index 15ab8da..48cd616 100644
+--- a/nvim/lua/usr/init.lua
++++ b/nvim/lua/usr/init.lua
+@@ -4,26 +4,27 @@ require("usr.lsp")
+ require("usr.cmp")
+ require("usr.bufferline")
+ require("usr.code_runner")
+-require("usr.hydra")
++-- require("usr.hydra")
+ require("usr.nvim-tree")
+ require("usr.nvim-treesitter")
+-require("usr.orgmode")
++-- require("usr.orgmode")
+ require("usr.telescope")
+ require("usr.version")
+ require("usr.which-key")
+ require("usr.colorscheme")
++--require("usr.session")
+ require("usr.alpha")
+ require("colorizer").setup({ "css", "javascript", "vim", html = { mode = "foreground" } })
+ require("nvim-surround").setup()
+ require("persisted").setup({ autoload = true })
+-require("gitsigns").setup({ signcolumn = false, numhl = true })
++-- require("gitsigns").setup({ signcolumn = false, numhl = true })
+ require("leap").add_default_mappings()
+-require("nvim-autopairs").setup()
+-require("fidget").setup()
+-require("nvim-navic").setup()
++require("nvim-autopairs").setup({})
++require("fidget").setup({})
++require("nvim-navic").setup({})
+ require("barbecue").setup()
+ require("nvim-lightbulb").update_lightbulb()
+-require("im_select").setup()
++--require("im_select").setup()
+ require("lualine").setup()
+ require("rsync").setup()
+ 
+@@ -47,8 +48,3 @@ require("aerial").setup({
+   },
+   attach_mode = "global",
+ })
+-
+-require("bookmarks").setup({
+-  mappings_enabled = false,
+-  virt_pattern = { "*.lua", "*.md", "*.c", "*.h", "*.sh" },
+-})

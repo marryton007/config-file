@@ -25,7 +25,7 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=500000
 SAVEHIST=500000
 setopt appendhistory
-setopt INC_APPEND_HISTORY
+setopt INC_APPEND_HISTORY  
 setopt SHARE_HISTORY
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -66,6 +66,7 @@ setopt SHARE_HISTORY
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
+
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
@@ -97,6 +98,7 @@ setopt SHARE_HISTORY
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -120,11 +122,15 @@ alias ls='ls --color'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias vim='nvim'
+#alias vim='nvim'
 alias ug='ug -Hn'
 # fdn no hide
 alias fdn='fd -HI'
 alias vimdiff='nvim -d'
+alias display='magick display'
+alias convert='magick convert'
+alias trz='trz -y'
+alias tsz='tsz -y'
 
 #umask 0002
 export EDITOR='nvim'
@@ -133,24 +139,25 @@ ulimit -c unlimited
 #enable vim mode
 bindkey -v
 
-# proxy setup
-export PROXY_HOST=http://192.168.160.23:10083
+# proxy setup 
+export PROXY_HOST=http://192.168.160.23:10083  
 
-alias enaproxy="export http_proxy=\$PROXY_HOST https_proxy=\$PROXY_HOST"
-alias disproxy="export http_proxy= https_proxy="
+alias enaproxy="export http_proxy=\$PROXY_HOST https_proxy=\$PROXY_HOST" 
+alias disproxy="export http_proxy= https_proxy=" 
 export no_proxy="localhost,127.0.0.1,taobao.org,tuna.tsinghua.edu.cn,163.com"
 
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/git/watchman/built/bin
 export PATH=$PATH:$HOME/.emacs.d/bin
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:/usr/lib/cargo/bin
-export ANDROID_SDK_ROOT=/opt/android-sdk
+export ANDROID_SDK_ROOT=/home/ehome/android-sdk
 export PATH=$PATH:${ANDROID_SDK_ROOT}/platform-tools
 export NDK_PATH=${ANDROID_SDK_ROOT}/ndk/21.4.7075529
 export ANDROID_NDK=${NDK_PATH}
+export PYTHONPATH=${NDK_PATH}/python-packages
 export PATH=$PATH:${NDK_PATH}/toolchains/llvm/prebuilt/linux-x86_64/bin
 export PATH=$PATH:${NDK_PATH}/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin
-export PATH=$PATH:/opt/sdk/rock/rk-android11/Source/prebuilts/gcc/linux-x86/aarch64/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin
+# export PATH=$PATH:/opt/sdk/rock/rk-android11/Source/prebuilts/gcc/linux-x86/aarch64/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin
 #export PATH=$PATH:${NDK_PATH}/prebuilt/linux-x86_64/bin/
 export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'
 
@@ -174,7 +181,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/local/bin/ccache
-export CCACHE_DIR=/opt/sdk/rock/.ccache
+export CCACHE_DIR=/mnt/DATA/LiuJiaXi/.cache
 
 # rustup
 RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
@@ -183,3 +190,5 @@ RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 export PNPM_HOME="/home/jiaxi/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+export DISPLAY=localhost:0.0

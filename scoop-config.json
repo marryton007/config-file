@@ -3,7 +3,7 @@
   "aria2-enabled": true,
   "aria2-options": "--check-certificate=false",
   "use_lessmsi": true,
-  "last_update": "2023-03-13T18:29:53.7953769+08:00",
-  "scoop_repo": "https://github.com/lukesampson/scoop",
-  "scoop_branch": "master"
+  "last_update": "2023-08-16T08:46:43.8248486+08:00",
+  "scoop_branch": "master",
+  "scoop_repo": "https://github.com/lukesampson/scoop"
 }
