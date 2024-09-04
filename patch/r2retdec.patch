@@ -1,0 +1,60 @@
+diff --git a/src/r2plugin/r2data.cpp b/src/r2plugin/r2data.cpp
+index 4ccbe54..de7c1d6 100644
+--- a/src/r2plugin/r2data.cpp
++++ b/src/r2plugin/r2data.cpp
+@@ -203,7 +203,7 @@ void R2Database::fetchGlobals(Config &config) const
+ 			continue;
+ 
+ 		std::string type(sym->type);
+-		std::string name(sym->name);
++		std::string name(sym->name->name);
+ 		std::string bind(sym->bind);
+ 		bool isImported = sym->is_imported;
+ 
+@@ -349,7 +349,7 @@ void R2Database::fetchExtraArgsData(ObjectSequentialContainer &args, RAnalFuncti
+ {
+ 	RAnalFuncArg *arg;
+ 
+-	char* key = resolve_fcn_name(_r2core.anal, r2fnc.name);
++	char* key = r_type_func_name(_r2core.anal->sdb_types, r2fnc.name);
+ 	if (!key || !_r2core.anal|| !_r2core.anal->sdb_types)
+ 		return;
+ 
+@@ -388,7 +388,7 @@ void R2Database::fetchFunctionCallingconvention(Function &function, RAnalFunctio
+ void R2Database::fetchFunctionReturnType(Function &function, RAnalFunction &r2fnc) const
+ {
+ 	function.returnType = Type("void");
+-	char* key = resolve_fcn_name(_r2core.anal, r2fnc.name);
++	char* key = r_type_func_name(_r2core.anal->sdb_types, r2fnc.name);
+ 
+ 	if (!key || !_r2core.anal || !_r2core.anal->sdb_types)
+ 		return;
+diff --git a/src/r2plugin/registration.cpp b/src/r2plugin/registration.cpp
+index 4f289b2..375f79c 100644
+--- a/src/r2plugin/registration.cpp
++++ b/src/r2plugin/registration.cpp
+@@ -43,14 +43,16 @@ static int r2retdec_cmd(void *user, const char* input)
+ 
+ // Structure containing plugin info.
+ RCorePlugin r_core_plugin_retdec = {
+-	/* .name = */ "r2retdec",
+-	/* .desc = */ "RetDec integration",
+-	/* .license = */ "MIT",
+-	/* .author = */ "Avast",
+-	/* .version = */ "0.4.0",
+-	/* .call = */ r2retdec_cmd,
+-	/* .init = */ nullptr,
+-	/* .fini = */ nullptr
++	.meta = {
++		.name = "r2retdec",
++		.desc = "RetDec integration",
++		.author = "Avast",
++		.version = "0.4.0",
++		.license = "MIT"
++	},
++	.call = r2retdec_cmd,
++	.init = nullptr,
++	.fini = nullptr
+ };
+ 
+ #ifndef CORELIB
