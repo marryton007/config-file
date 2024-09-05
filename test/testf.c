@@ -13,9 +13,9 @@ int write_file_str(const char *filename, const char *buf) {
   int ret;
   int fd;
 
-  fd = open(filename, O_WRONLY | O_CREAT);
+  fd = open(filename, O_WRONLY | O_CREAT, S_IRWXU | S_IRGRP | S_IROTH);
   if (fd < 0) {
-    printf("failed open file: %s, %s\n", filename, strerror(errno));
+    printf("failed open file: %s, %d, %s\n", filename, errno, strerror(errno));
     return fd;
   }
 
